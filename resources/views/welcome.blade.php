@@ -1,460 +1,153 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>
-        JeDaTravel
-    </title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajahi Desa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #FFFFFF;
-            color: #333333;
+            font-family: 'Arial', sans-serif;
         }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            border-bottom: 1px solid #E5E5E5;
+        .navbar {
+            transition: top 0.3s;
         }
-
-        header .logo {
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        header nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333333;
-            font-weight: 600;
-        }
-
-        header .sign-up {
-            background-color: #a80000;
-            color: #FFFFFF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px;
-            background-color: #F9F9F9;
-        }
-
-        .hero img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .hero .content {
-            max-width: 50%;
-        }
-
-        .hero .content h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero .content p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .hero .content .cta {
-            background-color: #10aa71;
-            color: #FFFFFF;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .features,
-        .recommendations,
-        .easy-booking,
-        .testimonials {
-            padding: 40px;
-        }
-
-        .features h2,
-        .recommendations h2,
-        .easy-booking h2,
-        .testimonials h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .features p,
-        .easy-booking p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .features .feature-list,
-        .recommendations .destination-list,
-        .testimonials .testimonial-list {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .features .feature,
-        .recommendations .destination,
-        .testimonials .testimonial {
-            background-color: #FFFFFF;
-            border: 1px solid #E5E5E5;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            flex: 1 1 22%;
-            box-sizing: border-box;
-        }
-
-        .features .feature i,
-        .testimonials .testimonial i {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .recommendations .destination img,
-        .easy-booking img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .recommendations .destination h3,
-        .testimonials .testimonial h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 10px 0;
-        }
-
-        .recommendations .destination p,
-        .testimonials .testimonial p {
-            font-size: 16px;
-        }
-
-        .testimonials .testimonial img {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .testimonials .testimonial .info {
-            display: flex;
-            align-items: center;
-        }
-
-        .testimonials .testimonial .info .name {
-            font-weight: 600;
-        }
-
-        .testimonials .testimonial .info .date {
-            font-size: 14px;
-            color: #999999;
-        }
-
-        .partners {
-            display: flex;
-            justify-content: space-between;
-            padding: 40px;
-        }
-
-        .partners img {
-            max-width: 100px;
-            height: auto;
-        }
-
-        footer {
-            padding: 20px 40px;
-            background-color: #F9F9F9;
-            text-align: center;
-            font-size: 14px;
-            color: #999999;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero .content {
-                max-width: 100%;
-            }
-
-            .features .feature,
-            .recommendations .destination,
-            .testimonials .testimonial {
-                flex: 1 1 100%;
-            }
-
-            .partners {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .partners img {
-                margin-bottom: 20px;
-            }
-        }
-    .easy-booking-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        flex: 1;
-    }
-
-    .easy-booking-content h2 {
-        font-size: 32px;
-        font-weight: 800;
-        margin-bottom: 15px;
-    }
-
-    .easy-booking-content p {
-        font-size: 25px;
-        margin-bottom: 10px;
-    }
     </style>
 </head>
+<body class="bg-white">
 
-<body>
-    <header>
-        <div class="logo">
-            JeDa Travel
+    <nav class="navbar fixed top-0 w-full bg-white shadow-md z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div><img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Jelajahi Desa Logo" class="h-12"></div>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-700 hover:text-blue-500">Beranda</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Desa Wisata</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Rekomendasi</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Booking</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Event</a>
+                <a href="{{ route('login') }}" class="text-blue-500 border border-blue-500 px-4 py-2 rounded">Sign in</a>
+            </div>
         </div>
-        <nav>
-            <a href="#">
-                Home
-            </a>
-            <a href="#">
-                About
-            </a>
-            <a href="#">
-                Contact
-            </a>
-        </nav>
-        <a class="sign-up" href="{{ route('login') }}">
-            Sign Up
-        </a>
+    </nav>
+
+    <header class="bg-gradient-to-r from-blue-500 to-blue-300 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-extrabold">Eksplorasi Tanpa Batas di Nusantara</h1>
+            <p class="mt-4 text-lg">Indonesia memiliki sejuta pesona yang menunggu untuk ditemukan.</p>
+            <button class="mt-6 bg-white text-blue-500 px-6 py-3 rounded-full font-semibold">Jelajahi Sekarang</button>
+            <p class="mt-2">Trailer JeDa</p>
+        </div>
     </header>
-    <section class="hero">
-        <div class="content">
-            <h1>
-                Eksplorasi Tanpa Batas di Nusantara
-            </h1>
-            <p>
-                Temukan pengalaman wisata yang menakjubkan, mulai dari pantai tropis hingga pegunungan yang memukau.
-                Semua dalam satu platform.
-            </p>
-            <a class="cta" href="#">
-                Start Your Journey
-            </a>
-        </div>
-        <img alt="Illustration of a beautiful landscape with mountains and trees" height="40"
-            src="https://storage.googleapis.com/a1aa/image/b7IBlZSTiq7tLZ4adEpdJ4eS5eTv2KMl9KgrFkaT4hcs4d8TA.jpg"
-            width="400" />
-    </section>
-    <section class="features">
-        <h2>
-            Bersama JeDa, Temukan Keajaiban Nusantara
-        </h2>
-        <p>
-            Layanan lengkap untuk pengalaman perjalanan terbaik.
-        </p>
-        <div class="feature-list">
-            <div class="feature">
-                <i class="fas fa-info-circle">
-                </i>
-                <h3>
-                    Informasi Lengkap
-                </h3>
-                <p>
-                    Semua yang Anda butuhkan untuk perjalanan.
-                </p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-map-signs">
-                </i>
-                <h3>
-                    Paket Wisata Pilihan
-                </h3>
-                <p>
-                    Pilih dari berbagai paket terbaik.
-                </p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-tags">
-                </i>
-                <h3>
-                    Harga Kompetitif
-                </h3>
-                <p>
-                    Harga yang sesuai dengan anggaran.
-                </p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-headset">
-                </i>
-                <h3>
-                    Pelayanan Pelanggan 24/7
-                </h3>
-                <p>
-                    Dukungan kapan saja Anda butuhkan.
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="recommendations">
-        <h2>
-            Rekomendasi Destinasi Wisata Terbaik
-        </h2>
-        <div class="destination-list">
-            <div class="destination">
-                <img alt="Candi Borobudur" height="200"
-                    src="https://storage.googleapis.com/a1aa/image/vhnv9rb5XBJPOJeflVOGOULzCjI025uKfnR9Sx8hQBYfi3xPB.jpg"
-                    width="300" />
-                <h3>
-                    Candi Borobudur
-                </h3>
-                <p>
-                    Mulai dari Rp 500.000
-                </p>
-            </div>
-            <div class="destination">
-                <img alt="Raja Ampat" height="200"
-                    src="https://storage.googleapis.com/a1aa/image/YE7Ll3NTzvYoItp5eoiyWX5rNnHsGhPrVpaUMdnedK5m4d8TA.jpg"
-                    width="300" />
-                <h3>
-                    Raja Ampat
-                </h3>
-                <p>
-                    Mulai dari Rp 1.000.000
-                </p>
-            </div>
-            <div class="destination">
-                <img alt="Pantai Kuta" height="200"
-                    src="https://storage.googleapis.com/a1aa/image/cJB8JXC0Zp4GJ5zFNKHwlAWUab3swrq9Z38smDWNqfiY8OeTA.jpg"
-                    width="300" />
-                <h3>
-                    Pantai Kuta
-                </h3>
-                <p>
-                    Mulai dari Rp 300.000
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="easy-booking d-flex ">
-        <div class="easy-booking-content">
-            <h2>
-                Mudah dan Cepat
-            </h2>
-            <p>
-                Pesan Perjalanan Impian Anda Dengan Mudah Di JeDa Travel
-            </p>
-            <p>
-                Pilih tujuan, pesan tiket, dan nikmati perjalanan.
-            </p>
-        </div>
-        <div>
-            <a class="cta" href="#">
-            </a>
-            <img alt="Booking process illustration" height="400"
-                src="https://storage.googleapis.com/a1aa/image/mQfEkuS7Rekhp0aLQvXszu3kNLmU5FdrC5qH9jhkovEq4d8TA.jpg"
-                width="600" />
-        </div>
-    </section>
-    <section class="testimonials">
-        <h2>
-            Apa Kata Mereka?
-        </h2>
-        <div class="testimonial-list">
-            <div class="testimonial">
-                <div class="info">
-                    <img alt="Profile picture of Andik Riswanto" height="50"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s"
-                        width="55" />
-                    <div>
-                        <div class="name">
-                            Andik Riswanto
-                        </div>
-                        <div class="date">
-                            1 days ago
-                        </div>
-                    </div>
-                </div>
-                <p>
-                    Pengalaman luar biasa dan menarik Proses pemesanan mudah dan layanan pelanggan sangat membantu.
-                </p>
-                <div>
-                    <i class="fas fa-thumbs-up">
-                    </i>
-                    200
-                    <i class="fas fa-comment">
-                    </i>
-                    105
-                </div>
-            </div>
-        </div>
-    </h2>
-    <div class="testimonial-list">
-        <div class="testimonial">
-            <div class="info">
-                <img alt="Profile picture of " height="50"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s"
-                    width="55" />
-                <div>
-                    <div class="name">
-                        Suprianto Santoso
-                    </div>
-                    <div class="date">
-                        2 days ago
-                    </div>
-                </div>
-            </div>
-            <p>
-                Aman dan cepat harga terjangkau dan sangat memuaskan.
-            </p>
-            <div>
-                <i class="fas fa-thumbs-up">
-                </i>
-                60
-                <i class="fas fa-comment">
-                </i>
-                30
-            </div>
-        </div>
-    </div>
-    </section>
-    <section class="partners">
-    </section>
-    <footer>
-        <p>
-            © 2024 JeDa Travel. All rights reserved.
-        </p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
 
+    <section class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold">Bersama JeDa, Temukan Keajaiban Nusantara</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <i class="fas fa-plane text-blue-500 text-4xl"></i>
+                    <h3 class="mt-4 font-semibold">Paket Wisata Fleksibel</h3>
+                    <p>Paket yang dapat disesuaikan dengan kebutuhan Anda.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <i class="fas fa-tags text-blue-500 text-4xl"></i>
+                    <h3 class="mt-4 font-semibold">Harga Kompetitif</h3>
+                    <p>Paket wisata terjangkau dengan kualitas terbaik.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <i class="fas fa-headset text-blue-500 text-4xl"></i>
+                    <h3 class="mt-4 font-semibold">Pelayanan Pelanggan 24/7</h3>
+                    <p>Dukungan pelanggan yang siap membantu kapan saja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold">Rekomendasi Destinasi Wisata Terbaik</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/210/2017/11/05101453/sunrise-candi-borobudur.jpg" alt="Candi Borobudur" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold">Candi Borobudur</h3>
+                        <p>Rp. 500.000</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Raja Ampat" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold">Raja Ampat</h3>
+                        <p>Rp. 3.000.000</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Pantai" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold">Pantai</h3>
+                        <p>Rp. 10.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold">Pesan Perjalanan Impian Anda Dengan Mudah Di JeDa</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <i class="fas fa-clock text-blue-500 text-4xl"></i>
+                    <h3 class="mt-4 font-semibold">Proses Cepat</h3>
+                    <p>Nikmati proses pemesanan cepat.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <i class="fas fa-map-marked-alt text-blue-500 text-4xl"></i>
+                    <h3 class="mt-4 font-semibold">Kemudahan Akses</h3>
+                    <p>Pilih destinasi dan paket wisata hanya dengan beberapa klik.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <i class="fas fa-headset text-blue-500 text-4xl"></i>
+                    <h3 class="mt-4 font-semibold">Pelayanan Pelanggan 24/7</h3>
+                    <p>Dukungan pelanggan yang siap membantu kapan saja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold">Apa Kata Mereka?</h2>
+            <div class="mt-8">
+                <blockquote class="italic text-lg">"Pengalaman luar biasa! Proses pemesanan sangat mudah dan cepat. Destinasi yang ditawarkan benar-benar memukau. Sangat direkomendasikan!"</blockquote>
+                <p class="mt-4 font-semibold">Mike Taylor, Lahore, Pakistan</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-gray-800 text-white">
+        <div class="container mx-auto text-center">
+            <div class="mb-4">Company</div>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-blue-300">About</a>
+                <a href="#" class="hover:text-blue-300">Careers</a>
+                <a href="#" class="hover:text-blue-300">Mobile</a>
+            </div>
+            <div class="mt-4">Contact</div>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-blue-300">Help/FAQ</a>
+                <a href="#" class="hover:text-blue-300">Press</a>
+                <a href="#" class="hover:text-blue-300">Affiliates</a>
+            </div>
+            <div class="mt-4">More</div>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-blue-300">Airline fees</a>
+                <a href="#" class="hover:text-blue-300">Airline</a>
+                <a href="#" class="hover:text-blue-300">Low fare tips</a>
+            </div>
+            <div class="mt-8">&copy; 2023 Jelajahi Desa. All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
 </html>
