@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -13,6 +13,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/gunung-bromo', function () {
     return view('gunung-bromo');
+});
+
+Route::get('/booking', function () {
+    return view('booking');
 });
 
 
