@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookingController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +20,8 @@ Route::get('/gunung-bromo', function () {
 Route::get('/booking', function () {
     return view('booking');
 });
+
+
 
 
 Route::middleware('auth')->group(function () {
