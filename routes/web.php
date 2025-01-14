@@ -36,5 +36,3 @@ Route::get('/rekomendasi', [RekomendasiController::class, 'index']);
 Route::get('/event', [EventController::class, 'index'])->name('event.index');
 
 Route::get('/festival', [FestivalController::class, 'index']);
-
-Route::get('/festival/calendar', [FestivalController::class, 'downloadCalendar'])->name('festival.calendar');
