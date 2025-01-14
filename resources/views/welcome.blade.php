@@ -40,7 +40,7 @@
             <h2 class="text-3xl font-bold">Rekomendasi Destinasi Wisata Terbaik</h2>
             <div class="scroll-container flex mt-8 space-x-4 overflow-x-auto pb-4">
                 <!-- Destinasi 1 -->
-                <a href="/gunung-bromo" class="inline-block bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <a href="{{ route('pesanan.index') }}" class="inline-block bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
                     <img src="https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/210/2017/11/05101453/sunrise-candi-borobudur.jpg" 
                          alt="Gunung Bromo" class="w-full h-48 object-cover">
                     <div class="p-4">
@@ -54,7 +54,7 @@
 
                 <!-- Lihat lebih banyak -->
                 <div class="inline-block flex justify-center items-center bg-gray-200 shadow-lg rounded-lg w-64 flex-shrink-0">
-                    <a href="/destinasi/semua" class="text-blue-500 font-semibold text-lg">
+                    <a href="" class="text-blue-500 font-semibold text-lg">
                         <i class="fas fa-arrow-right"></i> Lihat Lebih Banyak
                     </a>
                 </div>

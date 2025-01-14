@@ -21,7 +21,7 @@
                     <a href="#" class="text-gray-700 hover:text-blue-500">
                         Rekomendasi
                     </a>
-                    <a href="/booking" class="text-gray-700 hover:text-blue-500">
+                    <a href="#" class="text-gray-700 hover:text-blue-500">
                         Booking
                     </a>
                     <a href="#" class="text-gray-700 hover:text-blue-500">
@@ -100,7 +100,7 @@
             <a href="#" class="block pl-3 pr-4 py-2 text-gray-700 hover:bg-gray-50">
                 Rekomendasi
             </a>
-            <a href="/booking" class="block pl-3 pr-4 py-2 text-gray-700 hover:bg-gray-50">
+            <a href="#" class="block pl-3 pr-4 py-2 text-gray-700 hover:bg-gray-50">
                 Booking
             </a>
             <a href="#" class="block pl-3 pr-4 py-2 text-gray-700 hover:bg-gray-50">

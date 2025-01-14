@@ -30,7 +30,7 @@
                 <a href="{{ route('welcome') }}" class="text-gray-700 hover:text-blue-500">Beranda</a>
                 <a href="#" class="text-gray-700 hover:text-blue-500">Desa Wisata</a>
                 <a href="#" class="text-gray-700 hover:text-blue-500">Rekomendasi</a>
-                <a href="{{ route('booking') }}" class="text-gray-700 hover:text-blue-500">Booking</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Booking</a>
                 <a href="#" class="text-gray-700 hover:text-blue-500">Event</a>
                 <a href="{{ route('login') }}" class="text-blue-500 border border-blue-500 px-4 py-2 rounded">Sign in</a>
             </div>
