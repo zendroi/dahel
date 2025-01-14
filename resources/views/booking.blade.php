@@ -56,12 +56,22 @@
             <div class="mt-6">
                 <label class="block text-gray-700 text-lg">Jumlah Peserta</label>
                 <div class="flex items-center mt-2">
-                    <button class="bg-orange-500 text-white px-6 py-2 rounded-l text-lg">-</button>
-                    <input type="number" class="border border-gray-300 text-center w-20 text-lg" value="1"
-                        readonly>
-                    <button class="bg-orange-500 text-white px-6 py-2 rounded-r text-lg">+</button>
-                </div>
-                <p class="mt-3 text-gray-600 text-lg">Rincian Harga per Orang: Rp. 300.000</p>
+                    <input id="participantCount" type="number" class="border border-gray-350 text-center w-20 text-lg" value="1" min="1">
+                    <script>
+                        function decreaseValue() {
+                            const input = document.getElementById('participantCount');
+                            let currentValue = parseInt(input.value);
+                            if (currentValue > 1) {
+                                input.value = currentValue - 1;
+                            }
+                        }
+                        function increaseValue() {
+                            const input = document.getElementById('participantCount');
+                            let currentValue = parseInt(input.value);
+                            input.value = currentValue + 1;
+                        }
+                    </script>
+                    <p class="mt-3 text-gray-600 text-lg text-center"> Rincian Harga per Orang: Rp 300.000</p>
             </div>
 
             <!-- Visitor Info Form -->
@@ -71,8 +81,9 @@
                     class="border border-gray-300 rounded w-full p-3 mt-3 text-lg">
                 <div class="flex mt-3">
                     <input type="text" placeholder="+62" class="border border-gray-300 rounded-l w-1/4 p-3 text-lg">
-                    <input type="text" placeholder="(123) 456-7890"
+                    <input type="text" placeholder=""
                         class="border border-gray-300 rounded-r w-3/4 p-3 text-lg">
+
                 </div>
             </div>
 

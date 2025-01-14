@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\RekomendasiController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FestivalController;
+=======
+use App\Http\Controllers\BookingController;
+
+>>>>>>> a22b3bb3a28b2ea42b413ecb6dd28d532cb6cc05
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,6 +26,8 @@ Route::get('/gunung-bromo', function () {
 Route::get('/booking', function () {
     return view('booking');
 });
+
+
 
 
 Route::middleware('auth')->group(function () {
