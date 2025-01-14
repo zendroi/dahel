@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RekomendasiController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\FestivalController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +30,11 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/rekomendasi', [RekomendasiController::class, 'index']);
+
+Route::get('/event', [EventController::class, 'index'])->name('event.index');
+
+Route::get('/festival', [FestivalController::class, 'index']);
+
+Route::get('/festival/calendar', [FestivalController::class, 'downloadCalendar'])->name('festival.calendar');
