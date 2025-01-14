@@ -47,7 +47,7 @@
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="{{ Vite::asset('resources/images/pantai_kuta.png') }}" alt="Pantai Kuta"class="card-img">
+                    <img src="{{ asset('images/pantai_kuta.jpg') }}" alt="Pantai_Kuta"class="card-img">
                     <div class="card-body">
                         <h6 class="card-title">Pantai Kuta</h6>
                         <p class="card-text">Vacation in Paradise</p>
@@ -56,7 +56,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="{{ Vite::asset('resources/images/candi_prambanan.png') }}" alt="Candi Prambanan"
+                    <img src="{{ asset('images/candi_prambanan.jpg') }}" alt="candi_prambanan"
                         class="card-img">
                     <div class="card-body">
                         <h6 class="card-title">Candi Prambanan</h6>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="{{ Vite::asset('resources/images/desa_pelangi.png') }}" alt="Desa Pelangi"
+                    <img src="{{ asset('images/desa_pelangi.jpg') }}" alt="desa_pelangi"
                         class="card-img">
                     <div class="card-body">
                         <h6 class="card-title">Desa Pelangi</h6>

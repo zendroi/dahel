@@ -2,14 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 use App\Http\Controllers\RekomendasiController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FestivalController;
-=======
 use App\Http\Controllers\BookingController;
-
->>>>>>> a22b3bb3a28b2ea42b413ecb6dd28d532cb6cc05
+use App\Http\Controllers\HoneymoonPackageController;
+use App\Http\Controllers\SchoolTourController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,3 +41,7 @@ Route::get('/rekomendasi', [RekomendasiController::class, 'index']);
 Route::get('/event', [EventController::class, 'index'])->name('event.index');
 
 Route::get('/festival', [FestivalController::class, 'index']);
+
+Route::get('/honeymoon-package', [HoneymoonPackageController::class, 'index'])->name('honeymoon.package');
+
+Route::get('/school-tour', [SchoolTourController::class, 'index']);
