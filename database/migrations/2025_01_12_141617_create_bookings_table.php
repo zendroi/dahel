@@ -13,15 +13,15 @@ class CreateBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookings', function (Blueprint $table) {
-            $table->id(); // Primary Key
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Relasi ke tabel users
-            $table->foreignId('trip_id')->constrained()->onDelete('cascade'); // Relasi ke tabel trips
-            $table->integer('number_of_people'); // Jumlah orang
-            $table->decimal('total_price', 10, 2); // Total harga
-            $table->date('booking_date'); // Tanggal pemesanan
-            $table->string('status')->default('pending'); // Status pemesanan
-            $table->timestamps(); // created_at dan updated_at
+        Schema::create('booking', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_lengkap');
+            $table->string('no_hp');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_selesai');
+            $table->integer('jumlah_peserta');
+            $table->integer('harga_total');
+            $table->timestamps();
         });
     }
 
@@ -32,6 +32,6 @@ class CreateBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookings');
+        Schema::dropIfExists('booking');
     }
 }
