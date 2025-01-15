@@ -11,6 +11,9 @@
 
     <style>
         body {
+            background-image: url('{{ asset('images/bg.jpg') }}');
+            background-size: cover;
+            background-position: center;
             font-family: 'Arial', sans-serif;
         }
 
@@ -20,7 +23,7 @@
     </style>
 </head>
 
-<body class="bg-white">
+<body>
 
     <!-- Header -->
     <nav class="navbar fixed top-0 w-full bg-white shadow-md z-10">

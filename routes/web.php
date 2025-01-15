@@ -1,11 +1,9 @@
 <?php
-use App\Http\Controllers\PesananController;
+use App\Http\Controllers\PesananControler;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RekomendasiController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FestivalController;
-use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HoneymoonPackageController;
 use App\Http\Controllers\SchoolTourController;
 
@@ -23,11 +21,14 @@ Route::get('/gunung-bromo', function () {
 })->name('destinations.bromo');
 
 
-Route::get('/pesanan.index', [PesananController::class, 'index'])->name('pesanan.index');
+Route::get('/pesanan/create', [PesananControler::class, 'create'])->name('pesanan.create');
 
-Route::get('/pesanan.create', [PesananController::class, 'create'])->name('pesanan.create');
-Route::post('/pesanan.store', [PesananController::class, 'store'])->name('pesanan.store');
-Route::resource('pesanan', PesananController::class);
+Route::get('/pesanan/index', [PesananControler::class, 'index'])->name('pesanan.index');
+
+Route::post('/pesanan', [PesananControler::class, 'store'])->name('pesanan.store');
+
+Route::get('/booking', [PesananControler::class, 'index'])->name('booking.index');
+
 
 
 
