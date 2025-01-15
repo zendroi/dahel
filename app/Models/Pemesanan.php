@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Pemesanan extends Model
 {
-    use HasFactory;
+    protected $table = 'pemesanan';
 
-    protected $table = 'pemesanan'; // Nama tabel
-    protected $fillable = ['jumlahpeserta', 'namalengkap', 'nomertelpon'];
+    protected $fillable = [
+    'nama_lengkap',
+    'nomor_telepon',
+    'jumlah_peserta',
+];
+
 }

@@ -8,7 +8,7 @@ class GunungBromoController extends Controller
 {
     public function index()
     {
-        // Kirim data ke view jika diperlukan
+      
         $data = [
             'title' => 'Gunung Bromo',
             'rating' => 4.5,
@@ -28,7 +28,7 @@ class GunungBromoController extends Controller
             ]
         ];
 
-        // Return ke view
+      
         return view('gunung-bromo', $data);
     }
 }

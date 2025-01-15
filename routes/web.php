@@ -5,8 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekomendasiController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FestivalController;
-// The following line is redundant and causing the error
-
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\HoneymoonPackageController;
+use App\Http\Controllers\SchoolTourController;
 
 
 Route::get('/', function () {
@@ -22,8 +23,12 @@ Route::get('/gunung-bromo', function () {
 })->name('destinations.bromo');
 
 
-Route::resource('pesanan', PesananController::class);
 Route::get('/pesanan.index', [PesananController::class, 'index'])->name('pesanan.index');
+
+Route::get('/pesanan.create', [PesananController::class, 'create'])->name('pesanan.create');
+Route::post('/pesanan.store', [PesananController::class, 'store'])->name('pesanan.store');
+Route::resource('pesanan', PesananController::class);
+
 
 
 
@@ -35,8 +40,20 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/rekomendasi', [RekomendasiController::class, 'index']);
+Route::get('/rekomendasi', function () {
+    return view('rekomendasi');
+})->name('rekomendasi');
 
-Route::get('/event', [EventController::class, 'index'])->name('event.index');
+
+Route::get('/event', [EventController::class, 'index'])->name('event');
+
 
 Route::get('/festival', [FestivalController::class, 'index']);
+
+
+Route::get('/honeymoon_package', [HoneymoonPackageController::class, 'index'])->name('honeymoon_package');
+
+
+
+Route::get('/packages', [SchoolTourController::class, 'school_tour'])->name('packages');
+

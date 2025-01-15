@@ -1,101 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekomendasi Destinasi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+@section('title', 'Rekomendasi Destinasi')
 
-        .card-img {
-            width: 100%;
-            border-radius: 8px;
-        }
+@section('content')
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Rekomendasi Destinasi</h1>
+    <h5 class="text-center text-muted mb-5">Temukan destinasi menarik di sekitarmu</h5>
 
-        .promo {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .promo h5 {
-            font-weight: bold;
-        }
-
-        .btn-custom {
-            background-color: #ff7c57;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-        }
-
-        .btn-custom:hover {
-            background-color: #e56b4e;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container mt-5">
-        <h1>Rekomendasi Destinasi</h1>
-        <h5>Destinasi Disekitarmu</h5>
-        <div class="row mb-4">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="{{ Vite::asset('resources/images/pantai_kuta.png') }}" alt="Pantai Kuta"class="card-img">
-                    <div class="card-body">
-                        <h6 class="card-title">Pantai Kuta</h6>
-                        <p class="card-text">Vacation in Paradise</p>
+    <!-- Destinasi Cards -->
+    <div class="row mb-5">
+        <!-- Pantai Kuta -->
+        <div class="col-md-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow-sm border-0 h-100">
+                    <img src="{{ asset('images/pantai_kuta.jpg') }}" alt="Pantai Kuta" class="card-img-top rounded">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Pantai Kuta</h5>
+                        <p class="card-text text-muted">Vacation in Paradise</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="{{ Vite::asset('resources/images/candi_prambanan.png') }}" alt="Candi Prambanan"
-                        class="card-img">
-                    <div class="card-body">
-                        <h6 class="card-title">Candi Prambanan</h6>
-                        <p class="card-text">Cultural Heritage</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="{{ Vite::asset('resources/images/desa_pelangi.png') }}" alt="Desa Pelangi"
-                        class="card-img">
-                    <div class="card-body">
-                        <h6 class="card-title">Desa Pelangi</h6>
-                        <p class="card-text">Vibrant City Life</p>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
-        <h5>Paket Wisata</h5>
-        <div class="row text-center mb-4">
-            <div class="col-md-3">
-                <button class="btn btn-custom">Paket Bulan Madu</button>
-            </div>
-            <div class="col-md-3">
-                <button class="btn btn-custom">Bersama Jelajah</button>
-            </div>
-            <div class="col-md-3">
-                <button class="btn btn-custom">Paket Keluarga</button>
-            </div>
-            <div class="col-md-3">
-                <button class="btn btn-custom">Tur Sekolah</button>
-            </div>
+
+        <!-- Candi Prambanan -->
+        <div class="col-md-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow-sm border-0 h-100">
+                    <img src="{{ asset('images/candi_prambanan.jpg') }}" alt="Candi Prambanan" class="card-img-top rounded">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Candi Prambanan</h5>
+                        <p class="card-text text-muted">Cultural Heritage</p>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="promo">
-            <h5>Promo Spesial</h5>
-            <p>Diskon 20% untuk paket Bali<br><small>Berlaku hingga akhir bulan ini</small></p>
-            <p>Promo Beli 1 Gratis 1 untuk paket Candi<br><small>Khusus untuk pengguna baru</small></p>
+
+        <!-- Desa Pelangi -->
+        <div class="col-md-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow-sm border-0 h-100">
+                    <img src="{{ asset('images/desa_pelangi.jpg') }}" alt="Desa Pelangi" class="card-img-top rounded">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Desa Pelangi</h5>
+                        <p class="card-text text-muted">Vibrant City Life</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
-</body>
 
-</html>
+    <!-- Paket Wisata -->
+    <h5 class="mb-4">Paket Wisata</h5>
+    <div class="row text-center mb-5">
+        <div class="col-md-3">
+            <a href="{{ route('honeymoon_package') }}" class="btn btn-outline-primary btn-block">Paket Bulan Madu</a>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-outline-primary btn-block">Bersama Jelajah</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-outline-primary btn-block">Paket Keluarga</button>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ route('packages') }}" class="btn btn-outline-primary btn-block">Tur Sekolah</a>
+        </div>
+    </div>
+
+    <!-- Promo Section -->
+    <div class="promo bg-light p-4 rounded shadow-sm">
+        <h5 class="text-primary">Promo Spesial</h5>
+        <ul class="list-unstyled mt-3">
+            <li class="mb-2">
+                <strong>Diskon 20%</strong> untuk paket Bali<br>
+                <small class="text-muted">Berlaku hingga akhir bulan ini</small>
+            </li>
+            <li>
+                <strong>Promo Beli 1 Gratis 1</strong> untuk paket Candi<br>
+                <small class="text-muted">Khusus untuk pengguna baru</small>
+            </li>
+        </ul>
+    </div>
+</div>
+@endsection

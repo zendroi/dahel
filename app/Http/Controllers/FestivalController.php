@@ -8,7 +8,7 @@ class FestivalController extends Controller
 {
     public function index()
     {
-        // Contoh data (bisa berasal dari database)
+       
         $data = [
             'title' => 'Festival Musik Desa',
             'location' => 'Desa Sukoharjo',

@@ -6,6 +6,7 @@ use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class PesananController extends Controller
 {
@@ -33,17 +34,15 @@ class PesananController extends Controller
             ]
         ];
 
-        $pemesanan = DB::select(' 
-        select *, pemesanan_id as pemesanan_id
-        from pemesanan 
-    ');
-        $pageTitle="Pesanan";
+        $pemesanan = Pemesanan::all();
+
+        $pageTitle = "Pesanan";
         return view('pesanan.index', [
             'pageTitle' => $pageTitle,
             'pemesanan' => $pemesanan
         ]);
 
-       
+
     }
     /**
      * Show the form for creating a new resource.
@@ -59,40 +58,38 @@ class PesananController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    // Custom error messages
-    $messages = [
-        'required' => ':Attribute harus diisi.',
-        'numeric' => 'Isi :attribute dengan angka'
-    ];
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'namalengkap' => 'required|string|max:255',
+                'jumlahpeserta' => 'required|numeric|min:1|max:10',
+                'nomortelpon' => 'required|numeric|digits_between:10,15',
+                'nomornegara' => 'required|numeric|digits_between:1,4',
+            ]
+        );
 
-    // Validasi input
-    $validator = Validator::make(
-        $request->all(),
-        [ 
-            'namalengkap' => 'required',
-            'jumlahpeserta' => 'required|numeric',
-            'nomortelpon' => 'required|numeric',
-            'nomornegara' => 'required|numeric',
-        ],
-        $messages 
-    );
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-    // Jika validasi gagal, kembali ke halaman sebelumnya dengan error
-    if ($validator->fails()) {
-        return redirect()->back()->withErrors($validator)->withInput();
+        try {
+            // Debugging log
+            Log::info('Data yang disimpan:', $request->all());
+
+            Pemesanan::create([
+                'jumlahpeserta' => $request->jumlahpeserta,
+                'namalengkap' => $request->namalengkap,
+                'nomornasional' => $request->nomornegara,
+                'nomortelpon' => $request->nomortelpon,
+            ]);
+
+            return redirect()->route('pesanan.index')->with('success', 'Pemesanan berhasil ditambahkan!');
+        } catch (\Exception $e) {
+            Log::error('Error saat menyimpan data: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data!');
+        }
     }
-
-    // Jika validasi berhasil, simpan data
-    Pemesanan::create([
-        'jumlahpeserta' => $request->jumlahpeserta,
-        'namalengkap' => $request->namalengkap,
-        'nomertelpon' => $request->nomornegara . $request->nomortelpon,
-    ]);
-    // Redirect ke halaman index dengan pesan sukses
-    return redirect()->route('pesanan.index')->with('success', 'Pemesanan berhasil ditambahkan!');
-}
-    
 
     /**
      * Display the specified resource.
