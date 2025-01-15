@@ -30,8 +30,6 @@ class PesananControler extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-
         $request->validate([
             'nama_depan' => 'required|string|max:255',
             'nama_belakang' => 'required|string|max:255',
