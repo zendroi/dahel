@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PesananControler;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -21,13 +22,10 @@ Route::get('/gunung-bromo', function () {
 })->name('destinations.bromo');
 
 
-Route::get('/pesanan/create', [PesananControler::class, 'create'])->name('pesanan.create');
+Route::resource('pesanan', PesananControler::class);
 
-Route::get('/pesanan/index', [PesananControler::class, 'index'])->name('pesanan.index');
 
-Route::post('/pesanan', [PesananControler::class, 'store'])->name('pesanan.store');
-
-Route::get('/booking', [PesananControler::class, 'index'])->name('booking.index');
+Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
 
 
 

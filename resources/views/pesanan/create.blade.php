@@ -30,7 +30,8 @@
     <div class="flex justify-center items-center min-h-screen px-4">
         <form action="{{ route('pesanan.store') }}" method="POST" class="w-full max-w-2xl bg-white rounded-lg shadow-lg p-8 relative">
             @csrf
-            <img src="https://via.placeholder.com/500x300" alt="Gunung Bromo" class="w-full h-64 object-cover rounded-md">
+            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTInOZbgiH7YUXPZ3X7b1lh-ganKMXJEIGZyedquHmd-tANKhO-sSB26acleDNMx5CRhJFmzT70CHqL_rm3jyt4L3h2rYB7vuaKgETh2PA" 
+            alt="Gunung Bromo" class="w-full h-64 object-cover rounded-md">
             <h1 class="text-4xl font-bold mt-6">Gunung Bromo</h1>
             <div class="flex items-center mt-3">
                 <span class="text-yellow-500">
@@ -74,8 +75,8 @@
                         <input type="email" id="email" name="email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="email@example.com" required>
                     </div>
                     <div>
-                        <label for="nomor_telpon" class="block text-sm font-medium text-gray-700">Nomor Telepon</label>
-                        <input type="text" id="nomor_telpon" name="nomor_telpon" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="0812345678" required>
+                        <label for="nomor_telepon" class="block text-sm font-medium text-gray-700">Nomor Telepon</label>
+                        <input type="text" id="nomor_telepon" name="nomor_telepon" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="0812345678" required>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Jumlah Penumpang</label>
@@ -100,7 +101,7 @@
             </div>
 
             <div class="mt-6">
-                <button type="button" id="submit_btn" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Submit Form</button>
+                <button type="submit" id="submit_btn" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Pesan Sekarang</button>
             </div>
         </form>
 
@@ -116,11 +117,7 @@
         const toast = document.getElementById('liveToast');
         const submitBtn = document.getElementById('submit_btn');
 
-        submitBtn.addEventListener('click', () => {
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+    
         });
 
         // Passenger increment/decrement functionality

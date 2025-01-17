@@ -46,7 +46,7 @@
             <div class="scroll-container flex mt-8 space-x-4 overflow-x-auto pb-4">
                 <!-- Destinasi 1 -->
                 <a href="{{ route('booking.index') }}" class="inline-block bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
-                    <img src="https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/210/2017/11/05101453/sunrise-candi-borobudur.jpg" 
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTInOZbgiH7YUXPZ3X7b1lh-ganKMXJEIGZyedquHmd-tANKhO-sSB26acleDNMx5CRhJFmzT70CHqL_rm3jyt4L3h2rYB7vuaKgETh2PA" 
                          alt="Gunung Bromo" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="font-semibold">Gunung Bromo</h3>
